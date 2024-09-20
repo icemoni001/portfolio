@@ -18,3 +18,5 @@ document.querySelectorAll('a.nav-link').forEach(link => {
         navbar.classList.remove('scrolled');
     }
 });
+
+app.use(express.static('public')); // Assuming your files are in a folder named 'public'
