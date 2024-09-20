@@ -1,0 +1,868 @@
+    /* General Styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: url(img/bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #F5F2EB; /* Text color */
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    body{
+        background: url(img/bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    /* Navbar Styling */
+    #navbar {
+        background: linear-gradient(to right, #04444d67, #04ba7170, #fdc72756); /* Semi-transparent background */
+        padding: 20px 0;
+        transition: background-color 0.6s ease-in-out, padding 0.6s ease-in-out, box-shadow 0.6s ease-in-out; /* Smooth transition on scroll */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        opacity: 0; /* Start with opacity 0 for fade-in effect */
+        transform: translateY(-100%); /* Hidden above the page */
+        animation: navbarFadeIn 1.5s ease-in-out forwards; /* Fade-in and slide-down animation */
+    }
+
+    /* Navbar when scrolled */
+    #navbar.scrolled {
+        background-color: #04454D; /* Solid background on scroll */
+        padding: 15px 0; /* Shrinks the navbar on scroll */
+        box-shadow: 0 4px 10px #04BA71; /* Adds shadow for depth */
+    }
+
+    /* Hover effect for a smooth transition of the background color */
+    #navbar:hover {
+        background-color: rgba(4, 68, 77, 0.9); /* Slightly darker background on hover */
+        box-shadow: 0 6px 20px  #04BA71; /* Enhances the shadow on hover */
+    }
+
+    /* Keyframe for the fade-in and slide-down effect */
+    @keyframes navbarFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%); /* Start hidden above the viewport */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0); /* Slide down to its original position */
+        }
+    }
+
+    /* Smooth transition of padding and background on scroll */
+    #navbar.scrolled {
+        transition: background-color 0.4s ease-in-out, padding 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+
+    /* Basic Navbar Link Styling */
+    .navbar-nav .nav-link {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 0.05rem;
+        padding: 10px 15px;
+        position: relative;  /* Needed for underline effect */
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Color and position transition */
+    }
+    
+    /* Hover Effect - Link color changes with an animation */
+    .navbar-nav .nav-link:hover {
+        color: #FDC827; /* Accent color */
+        transform: translateY(-3px);  /* Slight lift on hover */
+    }
+    
+    /* Advanced Underline Animation */
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #FDC827; /* Accent color for underline */
+        transition: width 0.4s ease-in-out; /* Smooth width expansion */
+    }
+    
+    /* When hovered, expand the underline */
+    .navbar-nav .nav-link:hover::before {
+        width: 100%;
+    }
+    
+    /* Active link - subtle highlight */
+    .navbar-nav .nav-link.active {
+        color: #04BA71; /* Primary color for active links */
+    }
+    
+    /* Animation on page load (optional) */
+    .navbar-nav .nav-link {
+        opacity: 0;
+        animation: fadeInUp 1s ease-in-out forwards; /* Fade-in and slide-up animation */
+    }
+    
+    .navbar-nav .nav-link:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+    .navbar-nav .nav-link:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+    .navbar-nav .nav-link:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+    .navbar-nav .nav-link:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+    .navbar-nav .nav-link:nth-child(5) {
+        animation-delay: 1s;
+    }
+
+    /* Centered Logo with 3D effect */
+    .navbar-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000; /* Ensures the logo stays above other elements */
+    }
+
+    /* 3D Logo Animation */
+    .animated-logo {
+        width: 80px;
+        transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg); /* Initial 3D state */
+    }
+
+    .animated-logo:hover {
+        transform: perspective(1000px) rotateX(15deg) rotateY(15deg) scale(1.1); /* Hover 3D effect */
+        box-shadow: 0 10px 30px #0eff9f;
+    }
+
+    /* Navbar Menu Transition */
+    .navbar-toggler {
+        border-color: #F5F2EB;
+        transition: background-color 0.3s ease;
+    }
+
+    .navbar-toggler:hover {
+        background-color: #FDC827;
+    }
+
+    .navbar-toggler-icon {
+        background-color: #F5F2EB;
+    }
+
+    
+    /* Keyframes for fade-in and slide-up */
+    @keyframes fadeInUp {
+        0% {
+        opacity: 0;
+        transform: translateY(20px); /* Starts 20px below */
+        }
+        100% {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+        }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar-logo img {
+            width: 60px; /* Logo size adjusts on smaller screens */
+        }
+
+        .navbar-icons {
+            display: none; /* Hide icons on small screens */
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+    }
+
+    .navbar-brand {
+        color: #04BA71;
+    }
+    
+    /* Styling for Navbar Social Icons with Advanced Animation */
+    .navbar-icons {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-icons a {
+        color: #F5F2EB;
+        font-size: 1.5rem;
+        transition: transform 0.4s ease, color 0.4s ease;
+        position: relative;
+    }
+    
+    .navbar-icons a .fab {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* About Me Section Styling */
+    .about-section {
+        background-color: #231F20;
+        color: #F5F2EB;
+        padding: 50px 0;
+        animation: fadeIn 2s ease-in-out;
+    }
+    
+    .section-title {
+        color: #04BA71; /* Primary brand color */
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: #FDC827; /* Accent color */
+        margin-top: 10px;
+        animation: expandLine 1s ease-in-out;
+    }
+    
+    /* Text Styling */
+    .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #F5F2EB;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1.5s forwards;
+    }
+    
+    .about-text:nth-of-type(2) {
+        animation-delay: 0.5s; /* Staggered animation */
+    }
+    
+    /* Button Styling */
+    .btn-contact {
+        background-color: #04BA71;
+        color: #231F20;
+        align-self: flex-end;
+        padding: 5px 10px;
+        font-size: 1.1rem;
+        border: none;
+        margin-top: 20px;
+        animation: pulse 2s infinite;
+    }
+    
+    .btn-contact:hover {
+        background-color: #04454D; /* Hover effect */
+    }
+    
+    /* About Me Image */
+    .about-image {
+        width: 250px;
+        height: 250px;
+        display: inline-block;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 10px 20px #04BA71;
+        animation: fadeInRotate 2s ease-in-out;
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .about-image:hover img {
+        transform: scale(1.1); /* Zoom-in effect */
+    }
+
+    /* CV Download Button */
+    .btn-cv-download {
+        background-color: #04BA71; /* Primary brand color */
+        color: #F5F2EB; /* Text color */
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        font-weight: normal;
+        border: none;
+        border-radius: 40px;
+        text-transform: uppercase;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hover and Focus Animation */
+    .btn-cv-download:hover, .btn-cv-download:focus {
+        background-color: #04454D; /* Secondary brand color */
+        transform: translateY(-5px); /* Button "bounce" effect on hover */
+        box-shadow: 0 10px 30px #12ffa0;
+    }
+
+    /* Button on Active/Click */
+    .btn-cv-download:active {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+        opacity: 0;
+        }
+        to {
+        opacity: 1;
+        }
+    }
+    
+    @keyframes fadeInRotate {
+        0% {
+        transform: rotate(-360deg) scale(0.5);
+        opacity: 0;
+        }
+        100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+        }
+    }
+    
+    @keyframes expandLine {
+        0% {
+        width: 0;
+        }
+        100% {
+        width: 80px;
+        }
+    }
+    
+    @keyframes fadeUp {
+        0% {
+        opacity: 0;
+        transform: translateY(20px);
+        }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+        transform: scale(1);
+        }
+        50% {
+        transform: scale(1.1);
+        }
+    }
+    
+    
+    /* Hover effect with scaling and color transition */
+    .social-icon:hover {
+        color: #04BA71; /* Primary Brand Color */
+        transform: scale(1.3) rotate(10deg); /* Slight scaling and rotation */
+    }
+    
+    .social-icon::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #04BA71;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        transform: scale(0);
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    /* Animation for the background effect */
+    .social-icon:hover::before {
+        transform: scale(1.4); /* Expands the background effect */
+    }
+    
+    .social-icon:hover i {
+        color: #04454D; /* Change icon color on hover */
+    }
+    
+    /* Icon-specific hover color changes */
+    .social-icon:hover .fa-facebook-f {
+        color: #1441d6; /* Facebook blue */
+    }
+    
+    .social-icon:hover .fa-instagram {
+        color: #E4405F; /* Instagram gradient-like pink */
+    }
+    
+    .social-icon:hover .fa-github {
+        color: #cecdcd; /* GitHub dark color */
+    }
+    
+    /* Mobile view adjustments */
+    @media (max-width: 768px) {
+        .navbar-icons a {
+        font-size: 1.2rem;
+        }
+    }
+    
+    
+    /* Hero Section Profile Picture Styling */
+    .profile-picture {
+        margin-bottom: 20px;
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 10px 20px #04BA71; /* Adds a shadow */
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        animation: float 1s ease-in-out infinite; /* Floating animation */
+    }
+    
+    .profile-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    /* Hover effects for scaling and shadow */
+    .profile-picture:hover {
+        transform: scale(1.1) rotate(5deg); /* Slight scaling and rotation */
+        box-shadow: 0 15px 30px #04BA71; /* Increased shadow on hover */
+    }
+    
+    .profile-picture:hover img {
+        transform: scale(1.2); /* Image zoom-in on hover */
+    }
+    
+    /* Floating animation */
+    @keyframes float {
+        0%, 100% {
+        transform: translateY(0);
+        }
+        50% {
+        transform: translateY(-10px);
+        }
+    }
+    
+    /* Hero Section General Styles */
+    #hero {
+        height: 100vh;
+        background: url(img/bgg1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    h1, p {
+        color: #F5F2EB;
+    }
+    
+    .btn-hero {
+        background-color: #04BA71;
+        color: #231F20;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border: none;
+        animation: bounce 2s infinite;
+    }
+    
+    .btn-hero:hover {
+        background-color: #04454D;
+    }
+    
+    
+    h1, h2, p {
+        color: #F5F2EB;
+    }
+
+    /* Bounce Animation for Buttons */
+    .btn-bounce {
+        background-color: #04BA71;
+        color: #231F20;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        animation: bounce 2s infinite;
+    }
+    
+    .btn-bounce:hover {
+        background-color: #04454D;
+        color: #231F20;
+    }
+    
+    .btn-hero {
+        background-color: #04BA71;
+        color: #231F20;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border: none;
+        animation: bounce 2s infinite;
+    }
+    
+    .btn-hero:hover {
+        background-color: #04454D;
+    }
+    
+    .icon-skill {
+        font-size: 4rem;
+        color: #04BA71;
+        margin-bottom: 10px;
+        animation: spin 5s linear infinite;
+    }
+    
+    .card-portfolio:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .card-portfolio img {
+        transition: transform 0.5s ease;
+    }
+    
+    .card-portfolio:hover img {
+        transform: scale(1.2);
+    }
+    
+    blockquote {
+        font-style: italic;
+        color: #04454D;
+    }
+
+    /* Portfolio Section Styling */
+    .portfolio-section {
+        background-color: #231F20;
+        color: #F5F2EB;
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        color: #04BA71; /* Primary brand color */
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: #FDC827; /* Accent color */
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section-subtitle {
+        color: #F5F2EB;
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    /* Portfolio Grid */
+    .portfolio-item {
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+    
+    .portfolio-img {
+        position: relative;
+    }
+    
+    .portfolio-img img {
+        width: 100%;
+        border-radius: 15px;
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+    
+    .portfolio-item:hover img {
+        transform: scale(1.1); /* Zoom effect on hover */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    }
+    
+    /* Overlay Effect */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(4, 69, 77, 0.8); /* Semi-transparent secondary brand color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        border-radius: 15px;
+    }
+    
+    .portfolio-item:hover .overlay {
+        opacity: 1; /* Show overlay on hover */
+    }
+    
+    /* Overlay Text Styling */
+    .overlay-text {
+        text-align: center;
+        color: #F5F2EB;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+    
+    .portfolio-item:hover .overlay-text {
+        transform: translateY(0); /* Text comes up on hover */
+        opacity: 1;
+    }
+    
+    .overlay h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #FDC827; /* Accent color */
+    }
+    
+    .overlay p {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .portfolio-item {
+        margin-bottom: 20px;
+        }
+    }
+    
+
+    /* Testimonials Section Styling */
+    #testimonials {
+        background-color: #010e0f; /* Dark background */
+        color: #F5F2EB; /* Light text */
+        padding: 50px 0;
+        text-align: center;
+    }
+    
+    #testimonials h2 {
+        color: #04BA71; /* Primary brand color */
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .testimonial-item blockquote {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #FDC827; /* Accent color */
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-item footer {
+        font-size: 1.1rem;
+        color: #F5F2EB;
+    }
+    
+    .carousel-item {
+        transition: transform 1s ease, opacity 1s ease;
+    }
+    
+    .carousel-item img {
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-item:hover img {
+        transform: scale(1.1);
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: #04BA71; /* Primary brand color */
+        border-radius: 50%;
+    }
+    
+    .carousel-control-prev-icon:hover,
+    .carousel-control-next-icon:hover {
+        background-color: #FDC827; /* Accent color */
+    }
+    
+    /* Animation for testimonials on load */
+    .carousel-item {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    
+    .carousel-item.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    #foot{
+        background-color: #04454D;
+    }
+    /* Animations */
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        }
+        40% {
+        transform: translateY(-20px);
+        }
+        60% {
+        transform: translateY(-10px);
+        }
+    }
+    
+    @keyframes spin {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+    }
+    
+    /* Section Styling */
+    #contact {
+        background-color: #000000;
+        color: #F5F2EB;
+        padding: 60px 0;
+    }
+    
+    #contact h2 {
+        color: #04BA71; /* Primary brand color */
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+    }
+    
+    /* Contact Form Styling */
+    .contact-form {
+        background-color: #04454D;
+        box-shadow: 0 4px 10px #5a3e0b;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    
+    .contact-form:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 20px #2dffab;
+    }
+    
+    .contact-form .form-label {
+        color: #F5F2EB;
+    }
+    
+    .contact-form input, .contact-form textarea {
+        background-color: #231F20;
+        color: #F5F2EB;
+        border: 1px solid #04BA71;
+        transition: border 0.3s ease-in-out;
+    }
+    
+    .contact-form input:focus, .contact-form textarea:focus {
+        border-color: #FDC827; /* Secondary brand color */
+        box-shadow: 0 0 8px rgba(253, 200, 39, 0.5);
+    }
+    
+    .contact-form button {
+        background-color: #04BA71;
+        color: #F5F2EB;
+        border: none;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .contact-form button:hover {
+        background-color: #FDC827; /* Hover effect on button */
+    }
+    
+    /* Contact Info Section */
+    .contact-info h4 {
+        font-size: 1.5rem;
+        color: #04BA71;
+        margin-bottom: 10px;
+    }
+    
+    .contact-info ul li {
+    
+        margin-bottom: 10px;
+    }
+    
+    .contact-info ul li i {
+        color: #FDC827;
+        margin-right: 10px;
+    }
+    
+    .contact-info ul li a {
+        color: #ffffff;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .contact-info ul li a:hover {
+        color: #FDC827;
+    }
+
+    #calling {
+        background-color: #0c7dda;
+        color: #fff;
+        padding: 3px 2px;
+        border: none;
+        margin-top: 5px;
+        animation: pulse 2s infinite;
+    }
+
+    #calling:hover {
+        background-color: #032f53;
+    }
+    
+    /* Map Container */
+    .map-container {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    
+    .map-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Animation on Scroll */
+    @keyframes fadeInUp {
+        0% {
+        opacity: 0;
+        transform: translateY(50px);
+        }
+        100% {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+    
+    #contact {
+        animation: fadeInUp 1s ease-in-out forwards;
+    }
+    
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+        .contact-form {
+        margin-bottom: 30px;
+        }
+    }
+
+    
+    
