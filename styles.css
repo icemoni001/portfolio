@@ -817,6 +817,28 @@
         color: #FDC827;
     }
 
+   /* Chrome, Firefox, Opera, Safari 10.1+ */
+input::placeholder {
+    color: #F5F2EB;
+    font-style: italic;
+    font-size: 14px;
+    opacity: 1; /* Fully visible */
+}
+
+/* Internet Explorer 10-11 */
+input:-ms-input-placeholder {
+    color: #F5F2EB;
+    font-style: italic;
+}
+
+/* Microsoft Edge */
+input::-ms-input-placeholder {
+    color: #F5F2EB;
+    font-style: italic;
+}
+
+    
+
     #calling {
         background-color: #0c7dda;
         color: #fff;
