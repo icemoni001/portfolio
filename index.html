@@ -43,8 +43,9 @@
 
         <!-- Navbar Toggler for Mobile View -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
+        
 
         <!-- Collapsible Navbar Menu -->
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -73,7 +74,7 @@
     
         <h1>Welcome to My Portfolio</h1>
         <p>I am a Web Developer and Graphic Designer</p>
-        <a href="#portfolio" class="btn btn-hero">Explore My Work</a>
+        <a href="https://www.instagram.com/emaginative_?igsh=MTEyZ256NXZheWxvZQ==" class="btn btn-hero">Explore My Work</a>
         </div>
     </section>
     
@@ -398,15 +399,15 @@
             <div class="col-md-4 text-center footer-nav">
                 <h5 class="footer-title">Quick Links</h5>
                 <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
+                    <li><a href="#about" id="footer-link">About Me</a></li>
+                    <li><a href="#portfolio" id="footer-link">Portfolio</a></li>
+                    <li><a href="#contact" id="footer-link">Contact Me</a></li>
                 </ul>
             </div>
             <div class="col-md-4 text-center">
                 <h5 class="footer-title">Contact Info</h5>
-                <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-                <p>Phone: +1234567890</p>
+                <p>Email: <a href="mailto:ebukanebolise220@gmail.com" id="footer-link">Email Me</a></p>
+                <p>Phone: +2347078437197</p>
             </div>
         </div>
         <div class="row mt-4">
@@ -423,9 +424,20 @@
 </body>
 </html>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggler = document.querySelector('.navbar-toggler');
+        const navbarNav = document.querySelector('#navbarNav');
+
+        toggler.addEventListener('click', function () {
+            toggler.classList.toggle('collapsed'); // Toggle class
+        });
+    });
+</script>
+
     <!-- Link to JS -->
 <script src="js/script.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
     <script src="js/scripts.js"></script>

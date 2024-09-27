@@ -29,14 +29,14 @@
   </nav>
 
   <!-- About Section -->
-  <section class="about-section">
-    <div class="container text-center py-5">
+  <section class="about-section py-5" id="about">
+    <div class="container text-center">
       <h1 class="about-title">About Me</h1>
       <p class="about-description">
         I am a passionate web developer and graphic designer specializing in building responsive, interactive websites that captivate users. My focus is on creating seamless user experiences with a strong emphasis on modern design principles. Let’s bring your vision to life with a website that looks great and performs even better.
       </p>
-      <img src="img/profile.jpg" alt="Profile" class="profile-img">
-      <div class="skills-wrapper mt-4">
+      <img src="img/profile.jpg" alt="Profile" class="profile-img img-fluid"> <!-- Added img-fluid class -->
+      <div class="skills-wrapper mt-4 d-flex flex-wrap justify-content-center">
         <div class="skill-box">HTML5</div>
         <div class="skill-box">CSS3</div>
         <div class="skill-box">JavaScript</div>
@@ -46,40 +46,40 @@
     </div>
   </section>
 
-<!-- Footer Section -->
-<footer class="footer-section py-5">
+  <!-- Footer Section -->
+  <footer class="footer-section py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 text-center footer-social">
-                <h5 class="footer-title">Follow Me</h5>
-                <ul class="social-icons">
-                    <li><a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="https://github.com" target="_blank" class="github"><i class="fab fa-github"></i></a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 text-center footer-nav">
-                <h5 class="footer-title">Quick Links</h5>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 text-center">
-                <h5 class="footer-title">Contact Info</h5>
-                <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-                <p>Phone: +1234567890</p>
-            </div>
+      <div class="row">
+        <div class="col-md-4 text-center footer-social">
+          <h5 class="footer-title">Follow Me</h5>
+          <ul class="social-icons">
+            <li><a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://github.com" target="_blank" class="github"><i class="fab fa-github"></i></a></li>
+          </ul>
         </div>
-        <div class="row mt-4">
-            <div class="col text-center">
-                <p>&copy; 2024 E-maginative. All rights reserved.</p>
-            </div>
+        <div class="col-md-4 text-center footer-nav">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul>
+            <li><a href="index.html" id="footer-link">Home</a></li>
+            <li><a href="#about" id="footer-link">About Me</a></li>
+            <li><a href="#portfolio" id="footer-link">Portfolio</a></li>
+            <li><a href="#contact" id="footer-link">Contact Me</a></li>
+          </ul>
         </div>
+        <div class="col-md-4 text-center">
+          <h5 class="footer-title">Contact Info</h5>
+          <p>Email: <a href="mailto:ebukanebolise220@gmail.com" id="footer-link">Email Me</a></p>
+          <p>Phone: +2347078437197</p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-center">
+          <p>&copy; 2024 E-maginative. All rights reserved.</p>
+        </div>
+      </div>
     </div>
-</footer>
-
+  </footer>
 
   <!-- Include JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

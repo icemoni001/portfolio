@@ -75,7 +75,7 @@
         }
         
         #hire{
-            color: #FDC827;
+            color: #ffffff;
         }
 
         /* Hover Effect - Link color changes with an animation */
@@ -149,18 +149,37 @@
         }
 
         /* Navbar Menu Transition */
-        .navbar-toggler {
-            border-color: #F5F2EB;
-            transition: background-color 0.3s ease;
-        }
+        /* Styles for the Navbar Toggler */
+.navbar-toggler {
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    transition: transform 0.3s ease; /* Smooth transition for the button */
+}
 
-        .navbar-toggler:hover {
-            background-color: #FDC827;
-        }
+/* Navbar Toggler Icon Animation */
+.navbar-toggler.collapsed {
+    transform: rotate(0deg); /* Rotate when collapsed */
+}
 
-        .navbar-toggler-icon {
-            background-color: #F5F2EB;
-        }
+.navbar-toggler:not(.collapsed) {
+    transform: rotate(90deg); /* Rotate when expanded */
+}
+
+/* Collapse Transition */
+.collapse {
+    transition: max-height 0.5s ease; /* Smooth transition for collapsing */
+    overflow: hidden; /* Hide overflow */
+}
+
+.collapse.show {
+    max-height: 300px; /* Adjust as needed for your content */
+}
+
+/* Optional: Add some padding to the collapse content */
+#navbarNav {
+    padding: 15px 0; /* Add padding around menu items */
+}
+
 
         
         /* Keyframes for fade-in and slide-up */
@@ -178,7 +197,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .navbar-logo img {
-                width: 60px; /* Logo size adjusts on smaller screens */
+                display: none; /* Logo size adjusts on smaller screens */
             }
 
             .navbar-icons {
@@ -192,8 +211,8 @@
 
         .navbar-brand {
             font-family: 'Poppins', sans-serif;
-        font-size: 1.8rem;
-        font-weight: 700;
+        font-size: 1.2rem;
+        font-weight: 400;
         color: #F5F2EB;
         text-transform: uppercase;
         animation: logoAnimation 2s ease-in-out infinite;
