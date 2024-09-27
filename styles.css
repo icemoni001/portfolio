@@ -103,7 +103,7 @@
         
         /* Active link - subtle highlight */
         .navbar-nav .nav-link.active {
-            color: #04BA71; /* Primary color for active links */
+            color: #ffffff; /* Primary color for active links */
         }
         
         /* Animation on page load (optional) */
