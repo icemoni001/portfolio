@@ -150,59 +150,82 @@ body {
     color: #F5F2EB;
   }
   
-  /* Footer */
-  footer {
-    background-color: #04454D;
-    color: #F5F2EB;
-    padding: 40px 0;
-  }
-  
-.footer-content {
-    font-size: 1rem;
-  }
-  
-  .footer-social a {
-    margin: 0 10px;
-    color: #F5F2EB;
-    font-size: 1.5rem;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .footer-social a:hover {
-    color: #FDC827;
-  }
+  /* Footer Section */
+.footer-section {
+  background-color: #04454D;
+  color: #f5f5f5;
+  padding: 60px 0;
+  position: relative;
+  animation: footerEntry 1.8s ease;
+}
 
-  #footer-link{
-    color: rgb(0, 89, 255);
+.footer-section .footer-title {
+  color: #FDC827;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social .social-icons li a {
+  font-size: 2rem;
+  color: #f5f5f5;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer-social .social-icons li a:hover {
+  color: #FDC827;
+  transform: translateY(-5px);
+}
+
+.footer-nav ul {
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.footer-nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-nav ul li a {
+  color: #f5f5f5;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer-nav ul li a:hover {
+  color: #FDC827;
+  transform: translateY(-5px);
+}
+
+/* Keyframe Animations */
+@keyframes footerEntry {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
   }
-
-  #footer-link:hover{
-    color: #ffffff;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
+}
 
-  .footer-title{
-    font-size: larger;
-    color: #FDC827;
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-
-/* Responsive Styles */
-@media (max-width: 767.98px) {
-    .about-title {
-        font-size: 2rem; /* Adjust heading size for medium screens */
-    }
-
-    .about-description {
-        font-size: 1rem; /* Adjust paragraph size for medium screens */
-    }
-
-    .footer-section {
-        text-align: center; /* Center footer content */
-    }
-
-    .footer-title {
-        font-size: 1.25rem; /* Decrease footer title size */
-    }
+  to {
+      opacity: 1;
+  }
 }
 
 /* Keyframe Animations */
